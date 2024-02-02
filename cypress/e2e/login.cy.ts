@@ -15,3 +15,4 @@ describe('Login Page', () => {
         cy.contains('Log out')
     })
 });
+
