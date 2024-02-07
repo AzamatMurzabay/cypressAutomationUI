@@ -5,8 +5,8 @@ class Login {
     logOutButton: string = '#submit'
 
     submitButtonLogin(){
-        cy.get(this.userName).type('test');
-        cy.get('#password').type('Test1234*');
+        cy.get(this.userName).type(process.env.EMAIL);
+        cy.get(this.password).type(process.env.PASSWORD);
         cy.get(this.loginButton).click();
     }
 }

@@ -14,7 +14,7 @@ describe('COOKIES',()=>{
     })
 
     beforeEach(()=> {
-        cy.intercept({ resourceType: /xhr|fetch/}, {log: false})
+        cy.intercept({ resourceType: /xhr|fetch/}, {log: false});
     })
     // it('',()=>{
         
