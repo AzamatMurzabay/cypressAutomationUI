@@ -15,7 +15,7 @@ class Alert{
 
     jsAlert(){
         cy.contains(this.buttonSelector, this.alertTextButton).click(); 
-        cy.on("window:alert", (textAlert)=>{
+        cy.on("window:alert", (textAlert)=>{    
             expect(textAlert).to.equal(this.jsAlertText)
         })
         cy.on('window:confirm', ()=> true)
@@ -39,7 +39,14 @@ class Alert{
         cy.get(this.resultSelector).should('include.text', text)
 
     }
-
+    jsPrompt2(){
+        const text2 = 'Hello Hello'
+        cy.window().then($win => {
+            cy.stub($win, 'prompt').returns(text2)
+            cy.contains(this.buttonSelector, this.jsPromptText).click()
+   })
+   cy.get(this.resultSelector).should('include.text', text2)
+    } 
 }
 
 export const AlertPage = new Alert(); 

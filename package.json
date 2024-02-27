@@ -4,15 +4,21 @@
   "description": "Cypress Automation UI ",
   "main": "index.js",
   "scripts": {
-    "open": "cypress open --e2e --browser chrome"
+    "open": "cypress open --e2e --browser chrome",
+    "prettier": "npx prettier . --write",
+    "cypress-run": "cypress run --browser chrome --spec cypress/e2e/autoFill.cy.ts",
+    "cypressTest": "cypress run --browser chrome --spec cypress/e2e/**"
   },
   "author": "Az",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.6.2",
+    "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.8.1",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "dotenv": "^16.4.1"
+    "dotenv": "^16.4.1",
+    "node-xlsx": "^0.23.0"
   }
 }

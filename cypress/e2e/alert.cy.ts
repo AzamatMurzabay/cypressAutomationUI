@@ -1,5 +1,5 @@
 import { AlertPage} from '../../pages/Alert'
-describe('ALERT', ()=>{
+ describe('ALERT', ()=>{
     beforeEach(()=>{
         cy.visit(`${Cypress.env('herokuapp')}/javascript_alerts`);
     })
@@ -16,11 +16,8 @@ describe('ALERT', ()=>{
     it ('Click for JS Prompt OK/true', ()=>{
         AlertPage.jsPrompt()
     })
-    it ('Click for JS Prompt OK/true', ()=>{
-       cy.window().then($win => {
-            cy.stub($win, 'prompt').returns('Hello Hello')
-            cy.contains('button', 'Click for JS Prompt').click()
-       })
-       cy.get('#result').should('have.text', 'You entered: Hello Hello')
+    it ('Click for JS Prompt OK/true v2', ()=>{
+        AlertPage.jsPrompt2()
     })
 })
+ 
